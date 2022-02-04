@@ -349,8 +349,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a749d24835243148be07676914a07b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
-  JumpForce: 10
+  speed: 5
+  jumpForce: 10
+  isJumping: 0
+  doubleJump: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +448,7 @@ GameObject:
   - component: {fileID: 731675157}
   - component: {fileID: 731675156}
   - component: {fileID: 731675158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bricks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1421,7 @@ GameObject:
   - component: {fileID: 1459263664}
   - component: {fileID: 1459263663}
   - component: {fileID: 1459263665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
