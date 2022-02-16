@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public bool isJumping, doubleJump;
 
+    bool isBlowing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && !isBlowing)
         {
             if (!isJumping)
             {
@@ -78,6 +80,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == 8)
         {
             isJumping = false;
+            isBlowing = false;
             anim.SetBool("jump", false);
         }
 
@@ -95,5 +98,22 @@ public class Player : MonoBehaviour
             isJumping = true;
         }
 
+    }
+
+    //chama enquanto está colidindo
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            isBlowing = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //if (collision.gameObject.layer == 7)
+        //{
+        //    isBlowing = false;
+        //}
     }
 }
