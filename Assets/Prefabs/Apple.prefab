@@ -236,3 +236,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collected: {fileID: 3426904408425884016}
+  score: 10

@@ -9,6 +9,8 @@ public class Fruits : MonoBehaviour
 
     public GameObject collected;
 
+    public int score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,9 @@ public class Fruits : MonoBehaviour
             spriterenderer.enabled = false;
             circleCollider.enabled = false;
             collected.SetActive(true);
+
+            GameController.instance.totalScore += score;
+            GameController.instance.UpdateScoreText();
 
             Destroy(gameObject, 0.3f); //TEMPO PARA SER DESTRUIDO
         }  
