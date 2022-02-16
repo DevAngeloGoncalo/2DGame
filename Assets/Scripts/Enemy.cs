@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     public BoxCollider2D boxCollider2D;
     public CircleCollider2D circleCollider2D;
 
+    bool playerDestroyed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class Enemy : MonoBehaviour
         {
             float height = collision.contacts[0].point.y - headCollider.position.y;
 
-            if (height > 0)
+            if (height > 0 && !playerDestroyed)
             {
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10f, ForceMode2D.Impulse);
                 speed = 0f;
@@ -57,6 +59,13 @@ public class Enemy : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Kinematic;
 
                 Destroy(gameObject, 0.33f);
+            }
+            else
+            {
+                playerDestroyed = true;
+                GameController.instance.ShowGameOver();
+                Destroy(collision.gameObject);
+
             }
         }
     }

@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8657455043243389053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.168, y: 0.051, z: 0}
+  m_LocalPosition: {x: 0.236, y: 0.051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8657455043977131965}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8657455043887121074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.168, y: -0.039, z: 0}
+  m_LocalPosition: {x: 0.236, y: -0.039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8657455043977131965}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 8657455043977131967}
   - component: {fileID: 8657455043977131964}
   - component: {fileID: 8657455043977131961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyMaskDude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00849596, y: 0.03178157}
+  m_Offset: {x: 0.007972136, y: 0.110359006}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -223,7 +223,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20012137, y: 0.16542009}
+  m_Size: {x: 0.32898876, y: 0.11722575}
   m_EdgeRadius: 0
 --- !u!50 &8657455043977131967
 Rigidbody2D:
@@ -264,7 +264,7 @@ MonoBehaviour:
   headCollider: {fileID: 8657455042957121471}
   layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   boxCollider2D: {fileID: 8657455043977131966}
   circleCollider2D: {fileID: 8657455043977131961}
 --- !u!58 &8657455043977131961
@@ -280,6 +280,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009281677, y: -0.070937335}
+  m_Offset: {x: 0.0075048706, y: -0.0031757783}
   serializedVersion: 2
-  m_Radius: 0.05591457
+  m_Radius: 0.12900652
