@@ -69,8 +69,7 @@ public class Player : MonoBehaviour
 
                 }
 
-            }
-            
+            } 
         }
     }
 
@@ -82,7 +81,7 @@ public class Player : MonoBehaviour
             anim.SetBool("jump", false);
         }
 
-        if (collision.gameObject.tag == "Spike")
+        if (collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Saw") 
         {
             GameController.instance.ShowGameOver();
             Destroy(gameObject);
