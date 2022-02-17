@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
                 if (doubleJump)
                 {
                     rig.AddForce(new Vector2(0F, jumpForce), ForceMode2D.Impulse);
+                    anim.SetBool("doubleJump", true);
                     doubleJump = false;
                 }
             } 
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
             isJumping = false;
             isBlowing = false;
             anim.SetBool("jump", false);
+            anim.SetBool("doubleJump", false);
         }
 
         if (collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Saw") 
