@@ -20,11 +20,7 @@ public class Box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(heath <= 0)
-        {
-            Instantiate(effect, transform.position, transform.rotation);
-            Destroy(transform.parent.gameObject);
-        }   
+        BreakBox();   
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,6 +39,15 @@ public class Box : MonoBehaviour
                 heath--;
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0F, -jumpForce), ForceMode2D.Impulse);
             }
+        }
+    }
+
+    void BreakBox()
+    {
+        if (heath <= 0)
+        {
+            Instantiate(effect, transform.position, transform.rotation);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

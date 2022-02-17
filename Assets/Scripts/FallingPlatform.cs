@@ -8,13 +8,13 @@ public class FallingPlatform : MonoBehaviour
     public float fallingTime = 0f;
 
     private TargetJoint2D target;
-    private BoxCollider2D collider;
+    private BoxCollider2D bCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GetComponent <TargetJoint2D> ();
-        collider = GetComponent <BoxCollider2D> ();
+        bCollider = GetComponent <BoxCollider2D> ();
     }
 
     // Update is called once per frame
@@ -42,6 +42,6 @@ public class FallingPlatform : MonoBehaviour
     void Falling()
     {
         target.enabled = false;
-        collider.isTrigger = true;
+        bCollider.isTrigger = true;
     }
 }

@@ -111,12 +111,4 @@ public class Player : MonoBehaviour
             isBlowing = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        //if (collision.gameObject.layer == 7)
-        //{
-        //    isBlowing = false;
-        //}
-    }
 }

@@ -32,6 +32,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+    }
+
+    void Move()
+    {
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
         colliding = Physics2D.Linecast(rightCollider.position, leftCollider.position, layer);

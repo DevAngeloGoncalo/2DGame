@@ -18,6 +18,11 @@ public class Saw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+    }
+
+    void Move()
+    {
         if (correctDirection)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -34,6 +39,5 @@ public class Saw : MonoBehaviour
             correctDirection = !correctDirection;
             timer = 0f;
         }
-
     }
 }
