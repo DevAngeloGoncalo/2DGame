@@ -25,8 +25,20 @@ public class Player : MonoBehaviour
     {
         Move();
         Jump();
+        Fall();
     }
 
+    void Fall()
+    {
+        if (rig.velocity.y >= 0)
+        {
+            anim.SetBool("fall", false);
+        }
+        else
+        {
+            anim.SetBool("fall", true);
+        }
+    }
     void Move()
     {
 
@@ -85,6 +97,7 @@ public class Player : MonoBehaviour
         {
             isJumping = false;
             isBlowing = false;
+            anim.SetBool("fall", false);
             anim.SetBool("jump", false);
             anim.SetBool("doubleJump", false);
         }
