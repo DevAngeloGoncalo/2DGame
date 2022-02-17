@@ -15,13 +15,14 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this; 
+        instance = this;
+        LoadScore();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SaveScore(); 
     }
 
     public void UpdateScoreText()
@@ -34,8 +35,36 @@ public class GameController : MonoBehaviour
         gameOver.SetActive(true);
     }
 
+    public void NewGame()
+    {
+        PlayerPrefs.SetInt("score", 0);
+        SceneManager.LoadScene("Level_1");
+        totalScore = PlayerPrefs.GetInt("score");
+        scoreText.text = totalScore.ToString("0000");
+    }
+
     public void RestartGame(string levelName)
     {
+        
         SceneManager.LoadScene(levelName);
+    }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetInt("score", totalScore);
+    }
+
+    public void LoadScore()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            totalScore = 0;
+            scoreText.text = totalScore.ToString("0000");
+        }
+        else
+        {
+            totalScore = PlayerPrefs.GetInt("score");
+            scoreText.text = totalScore.ToString("0000");
+        }
     }
 }

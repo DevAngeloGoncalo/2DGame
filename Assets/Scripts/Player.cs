@@ -73,9 +73,7 @@ public class Player : MonoBehaviour
                 {
                     rig.AddForce(new Vector2(0F, jumpForce), ForceMode2D.Impulse);
                     doubleJump = false;
-
                 }
-
             } 
         }
     }
