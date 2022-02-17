@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public int totalScore;
+    public int totalScore, totalScoreBackup;
     public Text scoreText;
     public GameObject gameOver;
 
@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
+        totalScoreBackup = PlayerPrefs.GetInt("score"); ;
+        Debug.Log("backup " + totalScoreBackup);
         LoadScore();
     }
 
@@ -45,7 +47,8 @@ public class GameController : MonoBehaviour
 
     public void RestartGame(string levelName)
     {
-        
+        totalScore = totalScoreBackup;
+        //scoreText.text = totalScore.ToString("0000");
         SceneManager.LoadScene(levelName);
     }
 
