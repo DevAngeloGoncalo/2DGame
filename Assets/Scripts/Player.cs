@@ -104,8 +104,13 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Saw") 
         {
+            //CORRIGIR AG20220217
+            anim.Play("Player_Hit");
+            //StartCoroutine("hit");
+            
+            Destroy(gameObject, 6);
+
             GameController.instance.ShowGameOver();
-            Destroy(gameObject);
         }
     }
 
